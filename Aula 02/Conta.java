@@ -5,6 +5,7 @@ class Conta {
     private double saldo;
     private String dataDeAbertura;
     private int identificador;
+    private static int contador;
 
     public void saca (double valor) {
         this.saldo -= valor;
@@ -24,7 +25,8 @@ class Conta {
         dados += "\ndata de Abertura " + this.dataDeAbertura;
         dados += "\nRendimento " + this.calculaRendimento();
         dados += "\nSaldo " + this.saldo;
-        dados += "\nIdentificar " + this.identificador;                                                                  
+        dados += "\nIdentificador Unico " + this.identificador; 
+        dados += "\nContador " + this.contador;                                                                 
         return dados;
     }
     
@@ -64,18 +66,20 @@ class Conta {
         return this.dataDeAbertura;
     }
     
-    public int getIdentificador(){
-        return this.identificador;
+    public static int getContador(){
+        return contador;
     }
     
     public Conta() {
         //Construtor sem argumentos
-        this.identificador += 1;
+        this.contador += 1;
+        this.identificador = contador;
     }
     
     public Conta(String titular){
         this.titular = titular;
-        this.identificador += 1;
+        this.contador += 1;
+        this.identificador = contador;
     
     }
 }
