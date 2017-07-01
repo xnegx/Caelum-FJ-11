@@ -20,13 +20,13 @@ class Conta {
     }
     
     public String recuperaDadosParaImpressao() {
-        String dados = "Titular " + this.titular;
+        String dados = "\nTitular " + this.titular;
         dados += "\nNúmero: " + this.numero;
         dados += "\ndata de Abertura " + this.dataDeAbertura;
         dados += "\nRendimento " + this.calculaRendimento();
         dados += "\nSaldo " + this.saldo;
         dados += "\nIdentificador Unico " + this.identificador; 
-        dados += "\nContador " + this.contador;                                                                 
+        dados += "\nContador " + this.contador + "\n";                                                                 
         return dados;
     }
     
@@ -68,6 +68,10 @@ class Conta {
     
     public static int getContador(){
         return contador;
+    }
+    
+    public int getidentificador(){
+        return identificador;
     }
     
     public Conta() {
