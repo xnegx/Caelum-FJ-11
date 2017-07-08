@@ -1,10 +1,15 @@
 package br.com.caelum.contas.modelo;
 
+/**
+ * Classe que modela as contas do sistema.
+ * @author Everton
+ *
+ */
 public class Conta {
 	private String Titular;
 	private int numero;
 	private String agencia;
-	private double saldo;
+	protected double saldo;
 	private String dataDeAbertura;
 	
 	public String getTitular() {
@@ -31,19 +36,38 @@ public class Conta {
 	public void setDataDeAbertura(String dataDeAbertura) {
 		this.dataDeAbertura = dataDeAbertura;
 	}
+	
+	/**
+	 *  Metodo que retorna o valor do saldo
+	 * @return o valor do saldo
+	 */
 	public double getSaldo() {
 		return saldo;
 	}
+	
+	/**
+	 * Metodo para incrementar o saldo da conta
+	 * @param valor a ser depositado
+	 */
 	public void deposita(double valor) {
 		this.saldo += valor;
 		
 	}
-	public boolean saca(double valor) {
+	public void saca(double valor) {
 		if (valor <= this.saldo) {
 			this.saldo -= valor;
-			return true;
+			
 		}
-		return false;
+		
+	}
+	
+	public String getTipo() {
+		return "Conta";
+	}
+	
+	public void transfere(double valor, Conta conta) {
+		this.saca(valor);
+		conta.deposita(valor);
 	}
 
 }
