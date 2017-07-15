@@ -5,7 +5,7 @@ package br.com.caelum.contas.modelo;
  * @author Everton
  *
  */
-public class Conta {
+public abstract class Conta {
 	private String Titular;
 	private int numero;
 	private String agencia;
@@ -61,9 +61,7 @@ public class Conta {
 		
 	}
 	
-	public String getTipo() {
-		return "Conta";
-	}
+	public abstract String getTipo();
 	
 	public void transfere(double valor, Conta conta) {
 		this.saca(valor);
