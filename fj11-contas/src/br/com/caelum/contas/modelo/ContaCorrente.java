@@ -10,11 +10,14 @@ public class ContaCorrente extends Conta implements Tributavel{
 		if (valor < 0){
 			throw new IllegalArgumentException("Voce tentou sacar um valor negativo");
 		}
-		if (this.saldo < valor) {
+		if (this.saldo < (valor + 0.10)) {
 			throw new SaldoInsuficienteException();
+		} else {
+			this.saldo -= (valor + 0.10);
+			
 		}
-		this.saldo -= (valor + 0.10);
-		}
+		
+	}
 
 	@Override
 	public double getValorImposto() {
