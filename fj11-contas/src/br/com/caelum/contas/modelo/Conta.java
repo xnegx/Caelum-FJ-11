@@ -73,5 +73,19 @@ public abstract class Conta {
 		this.saca(valor);
 		conta.deposita(valor);
 	}
-
+	
+	@Override
+	public String toString() {
+		return "[titular=" + Titular.toUpperCase() +", numero=" + numero +", agencia=" + agencia + "]";
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		
+		Conta outraConta = (Conta) obj;
+		return this.numero == outraConta.numero && this.agencia.equals(outraConta.agencia);
+	}
 }
