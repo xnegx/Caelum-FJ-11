@@ -17,7 +17,7 @@ public class TestaConta {
 		//	System.out.println("Não Sacou!");
 		
 		String s = "f11";
-		s = s.replace("1", "2");
+		s.replace("1", "2");
 		System.out.println(s);
 
 	}

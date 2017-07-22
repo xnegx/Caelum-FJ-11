@@ -13,3 +13,7 @@ Maquina: oo6938
 Senha:	 oo6938
 
 Wifi:caelum3bf4
+
+
+http://aluno.caelum.com.br/login 
+certificado e apostila no site.
